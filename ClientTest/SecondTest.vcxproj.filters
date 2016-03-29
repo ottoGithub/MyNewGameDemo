@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="SDLEngine">
+      <UniqueIdentifier>{db101577-e32c-4b95-8b7d-05e50ceffd3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{c0d5cd9c-d9f3-4981-bcc9-0b6a0b6f29e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KeySet">
+      <UniqueIdentifier>{ee2f41f7-9fd0-4967-abd0-7ad4576a94ed}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Singleton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonDef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalValue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyPlayer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyEventListenerManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LTexture.h">
+      <Filter>SDLEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>SDLEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsFunctions.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="TileClipsData.h">
+      <Filter>SDLEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="KeySet.h">
+      <Filter>KeySet</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyDef.h">
+      <Filter>KeySet</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalValue.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorManager.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyPlayer.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2D.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyEventListenerManager.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LTexture.cpp">
+      <Filter>SDLEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>SDLEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsFunctions.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="TileClipsData.cpp">
+      <Filter>SDLEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="KeySet.cpp">
+      <Filter>KeySet</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ytty.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="boy.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="TestScene.map">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>
