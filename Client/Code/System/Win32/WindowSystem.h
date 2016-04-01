@@ -19,9 +19,13 @@ public:
 	virtual void Process();
 	virtual void ShutDown();
 
-	virtual int Update();
+	virtual int Update(Uint32 nFrameTime);
 
-protected:
+	SDL_Window* GetSDLWindow() { return m_pSDLWindow; }
+private:
+	bool InitSDL();
+
+private:
 	ProcessInfoWin32* m_pProcessInfo;
 	ISystem* m_pSystems;
 

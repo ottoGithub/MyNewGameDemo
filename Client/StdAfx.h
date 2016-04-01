@@ -14,6 +14,8 @@
 // Windows Header Files:
 #include <windows.h>
 
+#include "System/SystemGlobalEnvironment.h"
+
 #define SAFE_DELETE(p) if(p){delete p; p = NULL;}
 
 #endif

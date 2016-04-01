@@ -11,7 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Code\System\SystemGlobalEnvironment.cpp" />
+    <ClCompile Include="Code\System\Win32\GameClient.cpp" />
+    <ClCompile Include="Code\System\Win32\Renderer.cpp" />
     <ClCompile Include="Code\System\Win32\SystemWin32.cpp" />
+    <ClCompile Include="Code\System\Win32\Win32GameFrameWork.cpp" />
     <ClCompile Include="Code\System\Win32\WindowSystem.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -21,11 +25,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Log\PrintLog.h" />
+    <ClInclude Include="Code\System\IGameClient.h" />
     <ClInclude Include="Code\System\IGameFrameWork.h" />
+    <ClInclude Include="Code\System\IRenderer.h" />
     <ClInclude Include="Code\System\ISystem.h" />
     <ClInclude Include="Code\System\SystemGlobalEnvironment.h" />
+    <ClInclude Include="Code\System\Win32\GameClient.h" />
     <ClInclude Include="Code\System\Win32\ProcessInfoWin32.h" />
+    <ClInclude Include="Code\System\Win32\Renderer.h" />
     <ClInclude Include="Code\System\Win32\SystemWin32.h" />
+    <ClInclude Include="Code\System\Win32\Win32GameFrameWork.h" />
     <ClInclude Include="Code\System\Win32\WindowSystem.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="Main.h" />
@@ -72,6 +81,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>.\SDL2\lib\x86;</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

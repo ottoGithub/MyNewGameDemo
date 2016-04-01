@@ -17,11 +17,19 @@ public:
 	virtual void Process();
 	
 	virtual SSytemGlobalEnvironment* GetGlobalEnvironment() { return &m_env;}
+	virtual WindowSystem* GetWindowSystem() { return m_pWindowSystem; }
+
+	virtual void RenderBegin();
+	virtual void Render();
+	virtual void RenderEnd();
+
+public:
+	bool InitRenderer();
+	bool InitWindowSystem( ProcessInfoWin32* pProcessInfo );
 
 protected:
-
 	WindowSystem* m_pWindowSystem;
-	SSytemGlobalEnvironment m_env;
+	static SSytemGlobalEnvironment m_env;
 };
 
 #endif

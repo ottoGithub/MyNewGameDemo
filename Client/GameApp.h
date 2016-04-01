@@ -4,6 +4,8 @@
 #include "System/Win32/ProcessInfoWin32.h"
 
 class ISystem;
+class IGameFrameWork;
+class IGameClient;
 namespace XT_CLIENT
 {
 	class GameApp
@@ -19,8 +21,11 @@ namespace XT_CLIENT
 		void Shutdown();
 
 	protected:
-		ProcessInfoWin32* m_pProcessInfo;
 		ISystem* m_pSystem;
+
+		ProcessInfoWin32* m_pProcessInfo;
+		IGameFrameWork* m_pGameFrameWork;
+		IGameClient* m_pGameClient;
 	};
 }
 

@@ -1,7 +1,8 @@
 #include "StdAfx.h"
 #include "WindowSystem.h"
 #include "ProcessInfoWin32.h"
-#include "SDL.h"
+#include <SDL.h>
+#include <SDL_image.h>
 
 WindowSystem::WindowSystem()
 {
@@ -19,12 +20,27 @@ void WindowSystem::SetProcessInfo(ProcessInfoWin32* pProcessInfo)
 	m_pProcessInfo = pProcessInfo;
 }
 
-bool WindowSystem::Init( ISystem* pSystems )
+bool WindowSystem::InitSDL()
 {
-	m_pSystems = pSystems;
 	if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
 	{
 		printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
+		return false;
+	}
+	int imgFlags = IMG_INIT_PNG;
+	if( !( IMG_Init( imgFlags ) & imgFlags ) )
+	{
+		printf( "SDL_image could not initialize! SDL_mage Error: %s\n", IMG_GetError() );
+		return false;
+	}
+	return true;
+}
+
+bool WindowSystem::Init( ISystem* pSystems )
+{
+	m_pSystems = pSystems;
+	if(!InitSDL())
+	{
 		return false;
 	}
 	m_pSDLWindow = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
@@ -62,14 +78,17 @@ void WindowSystem::Process()
 			}
 		}
 		nStartTime = SDL_GetTicks();
-		Update();
+		Update(nFrameTime);
 		//GameLoop(nFrameTime);
 		nFrameTime = SDL_GetTicks() - nStartTime;
 	}
 }
 
-int WindowSystem::Update()
+int WindowSystem::Update(Uint32 nFrameTime)
 {
+	gEnv->pGameFrameWork->PreUpdate();
+	//GameLoop();
+	gEnv->pGameFrameWork->PostUpdate();
 	return 0;
 }
 
@@ -77,5 +96,8 @@ void WindowSystem::ShutDown()
 {
 	SDL_DestroyWindow(m_pSDLWindow);
 	m_pSDLWindow = NULL;
+
+	IMG_Quit();
+	SDL_Quit();
 
 }

@@ -150,6 +150,19 @@ int main( int argc, char* args[] )
 	return 0;
 }
 */
+#ifdef _DEBUG
+int main(int argc, char *argv[])
+{
+	ProcessInfoWin32* pProcessInfo = new ProcessInfoWin32;
+	XT_CLIENT::GameApp* pGameApp = new XT_CLIENT::GameApp();
+	pGameApp->SetProcessInfo(pProcessInfo);
+	pGameApp->Run();
+
+	SAFE_DELETE(pGameApp);
+	SAFE_DELETE(pProcessInfo);
+	return 0;
+}
+#else
 int APIENTRY WinMain(HINSTANCE hInstance,
 	HINSTANCE hPrevInstance,
 	LPSTR     lpCmdLine,
@@ -165,6 +178,7 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 	pGameApp->SetProcessInfo(pProcessInfo);
 	pGameApp->Run();
 
-	delete pGameApp;
-	delete pProcessInfo;
+	SAFE_DELETE(pGameApp);
+	SAFE_DELETE(pProcessInfo);
 }
+#endif

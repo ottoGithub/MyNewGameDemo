@@ -36,6 +36,18 @@
     <ClCompile Include="Code\System\Win32\WindowSystem.cpp">
       <Filter>System\Win32</Filter>
     </ClCompile>
+    <ClCompile Include="Code\System\Win32\Win32GameFrameWork.cpp">
+      <Filter>System\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\System\Win32\GameClient.cpp">
+      <Filter>System\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\System\SystemGlobalEnvironment.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\System\Win32\Renderer.cpp">
+      <Filter>System\Win32</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -67,6 +79,21 @@
     </ClInclude>
     <ClInclude Include="Code\System\SystemGlobalEnvironment.h">
       <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\System\Win32\Win32GameFrameWork.h">
+      <Filter>System\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\System\IGameClient.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\System\Win32\GameClient.h">
+      <Filter>System\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\System\IRenderer.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\System\Win32\Renderer.h">
+      <Filter>System\Win32</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
