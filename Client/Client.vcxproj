@@ -16,7 +16,6 @@
     <ClCompile Include="Code\System\Win32\Renderer.cpp" />
     <ClCompile Include="Code\System\Win32\SystemWin32.cpp" />
     <ClCompile Include="Code\System\Win32\Win32GameFrameWork.cpp" />
-    <ClCompile Include="Code\System\Win32\WindowSystem.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="StdAfx.cpp">
@@ -35,7 +34,6 @@
     <ClInclude Include="Code\System\Win32\Renderer.h" />
     <ClInclude Include="Code\System\Win32\SystemWin32.h" />
     <ClInclude Include="Code\System\Win32\Win32GameFrameWork.h" />
-    <ClInclude Include="Code\System\Win32\WindowSystem.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="StdAfx.h" />

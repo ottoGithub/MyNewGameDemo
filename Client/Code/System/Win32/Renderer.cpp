@@ -1,7 +1,6 @@
 #include "StdAfx.h"
 #include "Renderer.h"
 #include "System/Win32/SystemWin32.h"
-#include "System/Win32/WindowSystem.h"
 
 Renderer::Renderer()
 {
@@ -15,12 +14,11 @@ Renderer::~Renderer()
 bool Renderer::Init(ISystem* pSystems)
 {
 	m_pSystems = pSystems;
-	m_pSDLRenderer = SDL_CreateRenderer( m_pSystems->GetWindowSystem()->GetSDLWindow(), -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
+	m_pSDLRenderer = SDL_CreateRenderer( gWinData.m_pSDLWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
 	if(!m_pSDLRenderer)
 	{
 		return false;
 	}
-	SDL_SetRenderDrawColor( m_pSDLRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
 	return true;
 }
 

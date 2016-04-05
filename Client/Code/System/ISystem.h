@@ -11,10 +11,9 @@ public:
 	ISystem(){};
 	virtual ~ISystem(){};
 
-	virtual bool Init( ProcessInfoWin32* pProcessInfo ) = 0;
+	virtual bool Init() = 0;
 	virtual void Shutdown() = 0;
 
-	virtual WindowSystem* GetWindowSystem() = 0;
 	virtual SSytemGlobalEnvironment* GetGlobalEnvironment() = 0;
 
 	virtual void Process() = 0;

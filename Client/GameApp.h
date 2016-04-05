@@ -3,6 +3,9 @@
 
 #include "System/Win32/ProcessInfoWin32.h"
 
+const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 480;
+
 class ISystem;
 class IGameFrameWork;
 class IGameClient;
@@ -16,16 +19,15 @@ namespace XT_CLIENT
 
 		void SetProcessInfo( ProcessInfoWin32* pProcessInfo );
 		void Run();
-	protected:
+	private:
 		bool Init();
 		void Shutdown();
-
-	protected:
+		
+		bool InitSDL();
+		void Sys_CreateWindow();
+		
+	private:
 		ISystem* m_pSystem;
-
-		ProcessInfoWin32* m_pProcessInfo;
-		IGameFrameWork* m_pGameFrameWork;
-		IGameClient* m_pGameClient;
 	};
 }
 

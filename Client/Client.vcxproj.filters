@@ -33,9 +33,6 @@
     <ClCompile Include="Code\System\Win32\SystemWin32.cpp">
       <Filter>System\Win32</Filter>
     </ClCompile>
-    <ClCompile Include="Code\System\Win32\WindowSystem.cpp">
-      <Filter>System\Win32</Filter>
-    </ClCompile>
     <ClCompile Include="Code\System\Win32\Win32GameFrameWork.cpp">
       <Filter>System\Win32</Filter>
     </ClCompile>
@@ -69,9 +66,6 @@
       <Filter>System</Filter>
     </ClInclude>
     <ClInclude Include="Code\System\Win32\SystemWin32.h">
-      <Filter>System\Win32</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\System\Win32\WindowSystem.h">
       <Filter>System\Win32</Filter>
     </ClInclude>
     <ClInclude Include="Code\Log\PrintLog.h">

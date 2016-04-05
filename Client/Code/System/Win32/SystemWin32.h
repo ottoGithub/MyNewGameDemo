@@ -11,13 +11,12 @@ public:
 	SystemWin32();
 	virtual ~SystemWin32();
 
-	virtual bool Init( ProcessInfoWin32* pProcessInfo );
+	virtual bool Init();
 	virtual void Shutdown();
 
 	virtual void Process();
 	
 	virtual SSytemGlobalEnvironment* GetGlobalEnvironment() { return &m_env;}
-	virtual WindowSystem* GetWindowSystem() { return m_pWindowSystem; }
 
 	virtual void RenderBegin();
 	virtual void Render();
@@ -25,10 +24,8 @@ public:
 
 public:
 	bool InitRenderer();
-	bool InitWindowSystem( ProcessInfoWin32* pProcessInfo );
 
 protected:
-	WindowSystem* m_pWindowSystem;
 	static SSytemGlobalEnvironment m_env;
 };
 

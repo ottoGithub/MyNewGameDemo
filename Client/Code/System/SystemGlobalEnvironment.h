@@ -15,4 +15,11 @@ struct SSytemGlobalEnvironment
 };
 extern SSytemGlobalEnvironment* gEnv;
 
+struct Sys_WinData
+{
+	SDL_Window* m_pSDLWindow;
+	ProcessInfoWin32* m_pProcessInfo;
+};
+
+extern Sys_WinData gWinData;
 #endif

@@ -1,6 +1,5 @@
 #include "StdAfx.h"
 #include "SystemWin32.h"
-#include "WindowSystem.h"
 #include "Renderer.h"
 SSytemGlobalEnvironment SystemWin32::m_env;
 
@@ -33,19 +32,8 @@ bool SystemWin32::InitRenderer()
 	return true;
 }
 
-bool SystemWin32::InitWindowSystem( ProcessInfoWin32* pProcessInfo )
-{
-	m_pWindowSystem = new WindowSystem();
-	m_pWindowSystem->SetProcessInfo(pProcessInfo);
-	if( !m_pWindowSystem->Init( this ) )
-	{
-		SAFE_DELETE(m_pWindowSystem);
-		return false;
-	}
-	return true;
-}
 
-bool SystemWin32::Init( ProcessInfoWin32* pProcessInfo )
+bool SystemWin32::Init()
 {
 //#ifdef _DEBUG
 //	AllocConsole();
@@ -55,10 +43,6 @@ bool SystemWin32::Init( ProcessInfoWin32* pProcessInfo )
 //	WriteConsole(hOutputWin, StartString.c_str(), StartString.size(), &cCharsWritten, NULL);
 //#endif
 
-	if(!InitWindowSystem(pProcessInfo))
-	{
-		return false;
-	}
 	if(!InitRenderer())
 	{
 		return false;
@@ -70,7 +54,6 @@ bool SystemWin32::Init( ProcessInfoWin32* pProcessInfo )
 
 void SystemWin32::Shutdown()
 {
-	SAFE_DELETE(m_pWindowSystem);
 	SAFE_DELETE(m_env.pRenderer);
 
 //#ifdef _DEBUG
@@ -81,7 +64,6 @@ void SystemWin32::Shutdown()
 
 void SystemWin32:: Process()
 {
-	m_pWindowSystem->Process();
 }
 
 void SystemWin32::RenderBegin()
