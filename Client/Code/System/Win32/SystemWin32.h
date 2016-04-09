@@ -14,17 +14,17 @@ public:
 	virtual bool Init();
 	virtual void Shutdown();
 
-	virtual void Process();
+	virtual void Process(int32 nFrameTime);
 	
 	virtual SSytemGlobalEnvironment* GetGlobalEnvironment() { return &m_env;}
 
-	virtual void RenderBegin();
-	virtual void Render();
-	virtual void RenderEnd();
+	virtual void PreUpdate(int32 nFrameTime);
+	virtual void Update(int32 nFrameTime);
+	virtual void PostUpdate(int32 nFrameTime);
 
 public:
 	bool InitRenderer();
-
+	bool InitGameClient();
 protected:
 	static SSytemGlobalEnvironment m_env;
 };

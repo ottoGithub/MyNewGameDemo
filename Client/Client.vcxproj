@@ -12,10 +12,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\System\SystemGlobalEnvironment.cpp" />
+    <ClCompile Include="Code\System\UI\GUI.cpp" />
+    <ClCompile Include="Code\System\UI\GuiSystem.cpp" />
+    <ClCompile Include="Code\System\UI\ImGui\imgui.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Code\System\UI\ImGui\imgui_demo.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Code\System\UI\ImGui\imgui_draw.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Code\System\UI\imgui_impl_sdl.cpp" />
     <ClCompile Include="Code\System\Win32\GameClient.cpp" />
     <ClCompile Include="Code\System\Win32\Renderer.cpp" />
     <ClCompile Include="Code\System\Win32\SystemWin32.cpp" />
-    <ClCompile Include="Code\System\Win32\Win32GameFrameWork.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="StdAfx.cpp">
@@ -25,15 +36,22 @@
   <ItemGroup>
     <ClInclude Include="Code\Log\PrintLog.h" />
     <ClInclude Include="Code\System\IGameClient.h" />
-    <ClInclude Include="Code\System\IGameFrameWork.h" />
     <ClInclude Include="Code\System\IRenderer.h" />
     <ClInclude Include="Code\System\ISystem.h" />
     <ClInclude Include="Code\System\SystemGlobalEnvironment.h" />
+    <ClInclude Include="Code\System\UI\GUI.h" />
+    <ClInclude Include="Code\System\UI\GuiSystem.h" />
+    <ClInclude Include="Code\System\UI\ImGui\imconfig.h" />
+    <ClInclude Include="Code\System\UI\ImGui\imgui.h" />
+    <ClInclude Include="Code\System\UI\ImGui\imgui_internal.h" />
+    <ClInclude Include="Code\System\UI\ImGui\stb_rect_pack.h" />
+    <ClInclude Include="Code\System\UI\ImGui\stb_textedit.h" />
+    <ClInclude Include="Code\System\UI\ImGui\stb_truetype.h" />
+    <ClInclude Include="Code\System\UI\imgui_impl_sdl.h" />
     <ClInclude Include="Code\System\Win32\GameClient.h" />
     <ClInclude Include="Code\System\Win32\ProcessInfoWin32.h" />
     <ClInclude Include="Code\System\Win32\Renderer.h" />
     <ClInclude Include="Code\System\Win32\SystemWin32.h" />
-    <ClInclude Include="Code\System\Win32\Win32GameFrameWork.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="StdAfx.h" />
@@ -72,13 +90,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\;.\Code;.\SDL2\include;$(DXSDK_DIR)Include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\libs\glfw\include;.\Code\System\UI\ImGui;..\Server\CommonLib\Include;.\;.\Code;.\SDL2\include;$(DXSDK_DIR)Include;</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>.\SDL2\lib\x86;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>.\SDL2\lib\x86;..\Common\Lib;.\libs\glfw\lib-vc2010-32</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;CommonLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>

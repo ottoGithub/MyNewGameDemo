@@ -19,6 +19,12 @@
     <Filter Include="Log">
       <UniqueIdentifier>{d844000e-ecf7-4984-91f1-e11b0364edaa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="System\UI">
+      <UniqueIdentifier>{4eab9670-a9d0-4a21-acba-53130fa68cd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\UI\ImGui">
+      <UniqueIdentifier>{3aff9a58-7f4e-4fd8-a3f4-50e388d8b76e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -33,9 +39,6 @@
     <ClCompile Include="Code\System\Win32\SystemWin32.cpp">
       <Filter>System\Win32</Filter>
     </ClCompile>
-    <ClCompile Include="Code\System\Win32\Win32GameFrameWork.cpp">
-      <Filter>System\Win32</Filter>
-    </ClCompile>
     <ClCompile Include="Code\System\Win32\GameClient.cpp">
       <Filter>System\Win32</Filter>
     </ClCompile>
@@ -44,6 +47,24 @@
     </ClCompile>
     <ClCompile Include="Code\System\Win32\Renderer.cpp">
       <Filter>System\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\System\UI\GUI.cpp">
+      <Filter>System\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\System\UI\imgui_impl_sdl.cpp">
+      <Filter>System\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\System\UI\ImGui\imgui.cpp">
+      <Filter>System\UI\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\System\UI\ImGui\imgui_demo.cpp">
+      <Filter>System\UI\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\System\UI\ImGui\imgui_draw.cpp">
+      <Filter>System\UI\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\System\UI\GuiSystem.cpp">
+      <Filter>System\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,9 +83,6 @@
     <ClInclude Include="Code\System\ISystem.h">
       <Filter>System</Filter>
     </ClInclude>
-    <ClInclude Include="Code\System\IGameFrameWork.h">
-      <Filter>System</Filter>
-    </ClInclude>
     <ClInclude Include="Code\System\Win32\SystemWin32.h">
       <Filter>System\Win32</Filter>
     </ClInclude>
@@ -73,9 +91,6 @@
     </ClInclude>
     <ClInclude Include="Code\System\SystemGlobalEnvironment.h">
       <Filter>System</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\System\Win32\Win32GameFrameWork.h">
-      <Filter>System\Win32</Filter>
     </ClInclude>
     <ClInclude Include="Code\System\IGameClient.h">
       <Filter>System</Filter>
@@ -88,6 +103,33 @@
     </ClInclude>
     <ClInclude Include="Code\System\Win32\Renderer.h">
       <Filter>System\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\System\UI\GUI.h">
+      <Filter>System\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\System\UI\imgui_impl_sdl.h">
+      <Filter>System\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\System\UI\ImGui\imconfig.h">
+      <Filter>System\UI\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\System\UI\ImGui\imgui.h">
+      <Filter>System\UI\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\System\UI\ImGui\imgui_internal.h">
+      <Filter>System\UI\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\System\UI\ImGui\stb_rect_pack.h">
+      <Filter>System\UI\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\System\UI\ImGui\stb_textedit.h">
+      <Filter>System\UI\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\System\UI\ImGui\stb_truetype.h">
+      <Filter>System\UI\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\System\UI\GuiSystem.h">
+      <Filter>System\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

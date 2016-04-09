@@ -1,9 +1,7 @@
 #include "StdAfx.h"
 #include "GameApp.h"
 #include <SDL.h>
-#include <SDL_image.h>
 #include "System/Win32/SystemWin32.h"
-#include "System/Win32/Win32GameFrameWork.h"
 #include "System/Win32/GameClient.h"
 
 namespace XT_CLIENT
@@ -39,6 +37,7 @@ namespace XT_CLIENT
 			while( SDL_PollEvent( &e ) != 0 )
 			{
 				//User requests quit
+				//ImGui_ImplSdl_ProcessEvent(&event);
 				if( e.type == SDL_QUIT )
 				{
 					quit = true;
@@ -50,49 +49,22 @@ namespace XT_CLIENT
 			}
 			nStartTime = SDL_GetTicks();
 
-			m_pSystem->Process();
+			m_pSystem->Process(nFrameTime);
 
 			nFrameTime = SDL_GetTicks() - nStartTime;
 		}
 
 		Shutdown();
 	}
-
-	bool GameApp::InitSDL()
-	{
-		if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
-		{
-			printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
-			return false;
-		}
-		int imgFlags = IMG_INIT_PNG;
-		if( !( IMG_Init( imgFlags ) & imgFlags ) )
-		{
-			printf( "SDL_image could not initialize! SDL_mage Error: %s\n", IMG_GetError() );
-			return false;
-		}
-		return true;
-	}
-
-	void GameApp::Sys_CreateWindow()
-	{
-		assert(InitSDL());
-		
-		gWinData.m_pSDLWindow = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
-
-	}
-
 	bool GameApp::Init()
 	{
-		Sys_CreateWindow();
-
 		m_pSystem = new SystemWin32();
+		gEnv = m_pSystem->GetGlobalEnvironment();
 		if(!m_pSystem->Init())
 		{
 			SAFE_DELETE(m_pSystem);
 			return false;
 		}
-		gEnv = m_pSystem->GetGlobalEnvironment();
 
 		return true;
 	}

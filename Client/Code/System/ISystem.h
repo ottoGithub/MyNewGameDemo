@@ -1,6 +1,6 @@
 #ifndef _XT_SYSTEM_H_
 #define _XT_SYSTEM_H_
-
+#include "Types.h"
 
 struct ProcessInfoWin32;
 struct SSytemGlobalEnvironment;
@@ -16,11 +16,11 @@ public:
 
 	virtual SSytemGlobalEnvironment* GetGlobalEnvironment() = 0;
 
-	virtual void Process() = 0;
+	virtual void Process(int32 nFrameTime) = 0;
 
-	virtual void RenderBegin() = 0;
-	virtual void Render() = 0;
-	virtual void RenderEnd() = 0;
+	virtual void PreUpdate(int32 nFrameTime) = 0;
+	virtual void Update(int32 nFrameTime) = 0;
+	virtual void PostUpdate(int32 nFrameTime) = 0;
 };
 
 #endif

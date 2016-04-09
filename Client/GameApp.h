@@ -3,8 +3,6 @@
 
 #include "System/Win32/ProcessInfoWin32.h"
 
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
 
 class ISystem;
 class IGameFrameWork;
@@ -22,12 +20,9 @@ namespace XT_CLIENT
 	private:
 		bool Init();
 		void Shutdown();
-		
-		bool InitSDL();
-		void Sys_CreateWindow();
-		
 	private:
 		ISystem* m_pSystem;
+
 	};
 }
 

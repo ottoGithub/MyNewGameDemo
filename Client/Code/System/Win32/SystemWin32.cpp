@@ -32,6 +32,20 @@ bool SystemWin32::InitRenderer()
 	return true;
 }
 
+bool SystemWin32::InitGameClient()
+{
+	m_env.pGameClient = new GameClient();
+	if(!m_env.pGameClient)
+	{
+		return false;
+	}
+	if(!m_env.pGameClient->Init())
+	{
+		SAFE_DELETE(m_env.pGameClient);
+		return false;
+	}
+	return true;
+}
 
 bool SystemWin32::Init()
 {
@@ -44,6 +58,10 @@ bool SystemWin32::Init()
 //#endif
 
 	if(!InitRenderer())
+	{
+		return false;
+	}
+	if(!InitGameClient())
 	{
 		return false;
 	}
@@ -62,21 +80,24 @@ void SystemWin32::Shutdown()
 
 }
 
-void SystemWin32:: Process()
+void SystemWin32:: Process(int32 nFrameTime)
 {
+	PreUpdate(nFrameTime);
+	Update(nFrameTime);
+	PostUpdate(nFrameTime);
 }
 
-void SystemWin32::RenderBegin()
+void SystemWin32::PreUpdate(int32 nFrameTime)
 {
-	m_env.pRenderer->BeginFrame();
+	m_env.pRenderer->BeginFrame(nFrameTime);
 }
 
-void SystemWin32::Render()
+void SystemWin32::Update(int32 nFrameTime)
 {
-
+	m_env.pGameClient->Run(nFrameTime);
 }
 
-void SystemWin32::RenderEnd()
+void SystemWin32::PostUpdate(int32 nFrameTime)
 {
-	m_env.pRenderer->EndFrame();
+	m_env.pRenderer->EndFrame(nFrameTime);
 }

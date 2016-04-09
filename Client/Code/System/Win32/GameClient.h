@@ -4,18 +4,6 @@
 #include "System/IGameClient.h"
 
 
-enum State_Game_t
-{
-	STATE_START,
-	STATE_MAIN_PAGE,
-	STATE_BUSY,
-
-	STATE_GAME_LOADING,
-	STATE_GAME_INGAME,
-
-	STATE_NUM,
-};
-
 class GameClient : public IGameClient
 {
 public:
@@ -23,7 +11,7 @@ public:
 	virtual ~GameClient();
 
 	virtual bool Init();
-	virtual void Run();
+	virtual void Run(int32 nFrameTime);
 
 	virtual void Shutdown();
 

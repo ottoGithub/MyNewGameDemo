@@ -14,13 +14,14 @@ GameClient::~GameClient()
 
 bool GameClient::Init()
 {
-	m_LocalGameState = STATE_START;
+	m_LocalGameState = STATE_LOGIN_FRAME;
 	return true;
 }
 
-void GameClient::Run()
+void GameClient::Run(int32 nFrameTime)
 {
 
+	gEnv->pRenderer->RenderGUI(m_LocalGameState);
 }
 
 void GameClient::Shutdown()
