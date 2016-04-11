@@ -6,7 +6,7 @@
 #include "System/Win32/Renderer.h"
 
 
-const int SCREEN_WIDTH = GetSystemMetrics ( SM_CXSCREEN );;
+const int SCREEN_WIDTH = GetSystemMetrics ( SM_CXSCREEN );
 const int SCREEN_HEIGHT = GetSystemMetrics ( SM_CYSCREEN );
 
 struct SSytemGlobalEnvironment

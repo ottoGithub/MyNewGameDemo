@@ -24,6 +24,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Code\System\UI\imgui_impl_sdl.cpp" />
+    <ClCompile Include="Code\System\Win32\ActionManager.cpp" />
     <ClCompile Include="Code\System\Win32\GameClient.cpp" />
     <ClCompile Include="Code\System\Win32\Renderer.cpp" />
     <ClCompile Include="Code\System\Win32\SystemWin32.cpp" />
@@ -35,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Log\PrintLog.h" />
+    <ClInclude Include="Code\System\IActionListener.h" />
     <ClInclude Include="Code\System\IGameClient.h" />
     <ClInclude Include="Code\System\IRenderer.h" />
     <ClInclude Include="Code\System\ISystem.h" />
@@ -48,6 +50,7 @@
     <ClInclude Include="Code\System\UI\ImGui\stb_textedit.h" />
     <ClInclude Include="Code\System\UI\ImGui\stb_truetype.h" />
     <ClInclude Include="Code\System\UI\imgui_impl_sdl.h" />
+    <ClInclude Include="Code\System\Win32\ActionManager.h" />
     <ClInclude Include="Code\System\Win32\GameClient.h" />
     <ClInclude Include="Code\System\Win32\ProcessInfoWin32.h" />
     <ClInclude Include="Code\System\Win32\Renderer.h" />

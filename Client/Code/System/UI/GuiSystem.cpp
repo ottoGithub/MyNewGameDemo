@@ -1,15 +1,23 @@
 #include "StdAfx.h"
 #include "System/ui/GuiSystem.h"
+#include "System/Win32/ActionManager.h"
+#include "System/UI/imgui_impl_sdl.h"
 
 namespace XT_CLIENT
 {
 	GUISystem::GUISystem()
 	{
+		ADD_ACTION(this);
 	}
 
 	GUISystem::~GUISystem()
 	{
+		REMOVE_ACTION(this);
+	}
 
+	void GUISystem::HandleAction(SDL_Event& e)
+	{
+		ImGui_ImplSdl_ProcessEvent(&e);
 	}
 
 	void GUISystem::AddControl(State_Game_t nGameState, GuiControl* pControl)

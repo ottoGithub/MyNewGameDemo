@@ -3,17 +3,20 @@
 
 #include "GUI.h"
 #include "System/IGameClient.h"
+#include "System/IActionListener.h"
 #include <map>
 #include <vector>
 namespace XT_CLIENT
 {
 	typedef std::map< State_Game_t, GuiGroup* > GUIList;
 
-	class GUISystem
+	class GUISystem : public IActionListener
 	{
 	public:
 		GUISystem();
 		~GUISystem();
+
+		virtual void HandleAction(SDL_Event& e);
 
 		void AddControl(State_Game_t nGameState,GuiControl* pControl);
 		void AddBackground(State_Game_t nGameState,GuiControl* pBackGround);

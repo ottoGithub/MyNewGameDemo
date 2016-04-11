@@ -22,7 +22,7 @@ private:
 	void InitGuiControls();
 	void Sys_CreateWindow();
 
-	void AddTexture2D(char* path, void** pTex, int& w, int& h);
+	void AddTexture2D(char* path, void** pTex, int& w , int& h);
 private:
 	XT_CLIENT::GUISystem* m_pGuiSystem;
 	SDL_GLContext m_pGLContext;

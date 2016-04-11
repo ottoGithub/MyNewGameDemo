@@ -4109,14 +4109,14 @@ bool ImGui::Begin(const char* name, bool* p_opened, const ImVec2& size_on_first_
     // Inner clipping rectangle
     // We set this up after processing the resize grip so that our clip rectangle doesn't lag by a frame
     // Note that if our window is collapsed we will end up with a null clipping rectangle which is the correct behavior.
-    const ImRect title_bar_rect = window->TitleBarRect();
-    const float border_size = window->BorderSize;
-    ImRect clip_rect;
-    clip_rect.Min.x = title_bar_rect.Min.x + 0.5f + ImMax(border_size, window->WindowPadding.x*0.5f);
-    clip_rect.Min.y = title_bar_rect.Max.y + window->MenuBarHeight() + 0.5f + border_size;
-    clip_rect.Max.x = window->Pos.x + window->Size.x - window->ScrollbarSizes.x - ImMax(border_size, window->WindowPadding.x*0.5f);
-    clip_rect.Max.y = window->Pos.y + window->Size.y - border_size - window->ScrollbarSizes.y;
-    PushClipRect(clip_rect.Min, clip_rect.Max, true);
+	const ImRect title_bar_rect = window->TitleBarRect();
+	const float border_size = window->BorderSize;
+	ImRect clip_rect;
+	clip_rect.Min.x = title_bar_rect.Min.x + /*0.5f +*/ ImMax(border_size, window->WindowPadding.x*0.5f);
+	clip_rect.Min.y = title_bar_rect.Max.y + window->MenuBarHeight() + /*0.5f +*/ border_size;
+	clip_rect.Max.x = window->Pos.x + window->Size.x - window->ScrollbarSizes.x - ImMax(border_size, window->WindowPadding.x*0.5f);
+	clip_rect.Max.y = window->Pos.y + window->Size.y - border_size - window->ScrollbarSizes.y;
+	PushClipRect(clip_rect.Min, clip_rect.Max, true);
 
     // Clear 'accessed' flag last thing
     if (first_begin_of_the_frame)
@@ -5470,7 +5470,6 @@ bool ImGui::ImageButton(ImTextureID user_texture_id, const ImVec2& size, const I
     if (bg_col.w > 0.0f)
         window->DrawList->AddRectFilled(image_bb.Min, image_bb.Max, GetColorU32(bg_col));
     window->DrawList->AddImage(user_texture_id, image_bb.Min, image_bb.Max, uv0, uv1, GetColorU32(tint_col));
-
     return pressed;
 }
 

@@ -12,12 +12,13 @@ namespace XT_CLIENT
 		Control_StaticText,
 		Control_Button,
 		Control_Image,
+		Control_ImageButton,
 	};
 	struct GuiControl
 	{
 		std::string name;
 		int control_type;
-		int posX,posY;
+		float posX,posY;
 		int width,height;
 		std::string text;
 		void* upTexture;

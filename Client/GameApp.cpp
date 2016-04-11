@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include "System/Win32/SystemWin32.h"
 #include "System/Win32/GameClient.h"
+#include "System/Win32/ActionManager.h"
 
 namespace XT_CLIENT
 {
@@ -36,16 +37,11 @@ namespace XT_CLIENT
 			//Handle events on queue
 			while( SDL_PollEvent( &e ) != 0 )
 			{
-				//User requests quit
-				//ImGui_ImplSdl_ProcessEvent(&event);
 				if( e.type == SDL_QUIT )
 				{
 					quit = true;
 				}
-				else
-				{
-					//KeyEventListenerManager::Instance().HandlerEvent(e);
-				}
+				ActionManager::Instance().HandleAction(e);
 			}
 			nStartTime = SDL_GetTicks();
 
